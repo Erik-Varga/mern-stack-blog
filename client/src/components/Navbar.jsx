@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { FaBars } from 'react-icons/fa';
 import { IoClose } from "react-icons/io5";
-import { IKImage } from "imagekitio-react";
 import Image from './Image';
 
 const Navbar = () => {
@@ -11,8 +10,6 @@ const Navbar = () => {
         <div className='w-full h-16 md:h-20 flex items-center justify-between bg-gray-100'>
             {/* logo */}
             <div className="flex items-center gap-4 text-2xl font-bold">
-                {/* <IKImage urlEndpoint={import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT} path='/favicon.jpg' className='w-8 h-8 border-gray-900 rounded-sm shadow-md' /> */}
-
                 <Image src="favicon.jpg" alt="Spudev Logo" className='w-8 h-8 border-gray-900 rounded-sm shadow-md' />
 
                 <span>spudevlog</span>
