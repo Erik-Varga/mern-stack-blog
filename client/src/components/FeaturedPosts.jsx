@@ -31,7 +31,7 @@ const FeaturedPosts = () => {
             <div className="w-full lg:w-1/2 flex flex-col gap-4">
                 {/* second */}
                 <div className="lg:h-1/3 flex justify-between gap-4">
-                    <img src="https://images.unsplash.com/photo-1741813203115-e4a83fc6e9d5?q=80&w=2157&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-3xl object-cover w-1/3 aspect-video" />
+                    <img src="https://images.unsplash.com/photo-1600389909356-02d673eff36f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-3xl object-cover w-1/3 aspect-video" />
 
                     {/* <Image src="featured2.jpeg" className="rounded-3xl object-cover w-1/3 aspect-video" /> */}
 
