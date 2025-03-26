@@ -22,35 +22,31 @@ const router = createBrowserRouter([
   {
     element: <MainLayout />,
     children: [
+      // errorElement: <ErrorPage />,
       {
-        errorElement: <ErrorPage />,
-        children: [
-          {
-            path: "/",
-            element: <Homepage />,
-          },
-          {
-            path: "/posts",
-            element: <PostListPage />,
-          },
-          {
-            path: "/slug",
-            element: <SinglePostPage />,
-          },
-          {
-            path: "/write",
-            element: <Write />,
-          },
-          {
-            path: "/login",
-            element: <LoginPage />,
-          },
-          {
-            path: "/register",
-            element: <RegisterPage />,
-          },
-        ],
-      }
+        path: "/",
+        element: <Homepage />,
+      },
+      {
+        path: "/posts",
+        element: <PostListPage />,
+      },
+      {
+        path: "/slug",
+        element: <SinglePostPage />,
+      },
+      {
+        path: "/write",
+        element: <Write />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+      {
+        path: "/register",
+        element: <RegisterPage />,
+      },
     ]
   }
   
