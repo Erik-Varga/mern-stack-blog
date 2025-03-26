@@ -14,8 +14,7 @@ function App() {
       {/* Breadcrumb */}
       {/* Introduction */}
       {/* Featured Posts */}
-      {/* Post List */}
-      
+      {/* Post List */}      
     </div>
   )
 }

@@ -3,7 +3,7 @@ import React from 'react'
 
 const LoginPage = () => {
   return (
-    <div className='flex items-center justify-center my-12'>
+    <div className='h-full flex items-center justify-center'>
       <SignIn signUpUrl='/register' />
     </div>
   )
