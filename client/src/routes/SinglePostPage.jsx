@@ -66,7 +66,7 @@ const SinglePostPage = () => {
             <div className="flex flex-col gap-4">
 
               <div className="flex items-center gap-8">
-                <Image src="userImg.jpeg" className="w-12 h-12 rounded-full object-cover" w="48" h="48" />
+                <Image src="userImg2.jpeg" className="w-12 h-12 rounded-full object-cover" w="48" h="48" />
                 <Link className='text-blue-800'>Erik Varga</Link>
               </div>
               <p className='text-sm text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nam optio molestias amet assumenda modi.</p>
