@@ -23,7 +23,6 @@ const router = createBrowserRouter([
   {
     element: <MainLayout />,
     children: [
-      // errorElement: <ErrorPage />,
       {
         path: "/",
         element: <Homepage />,
@@ -33,7 +32,7 @@ const router = createBrowserRouter([
         element: <PostListPage />,
       },
       {
-        path: "/slug",
+        path: "/:slug",
         element: <SinglePostPage />,
       },
       {

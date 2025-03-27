@@ -21,6 +21,15 @@ const FeaturedPosts = () => {
                     <span className="text-gray-500">2 days ago</span>
                 </div>
 
+                <div className='flex items-center gap-2 text-gray-400 text-sm'>
+                    <span>Written by</span>
+                    <Link>Erik Varga</Link>
+                    <span>|</span>
+                    <Link>Web Design</Link>
+                    <span>|</span>
+                    <span>2 days ago</span>
+                </div>
+
                 {/* title */}
                 <Link to="/test" className='text-xl lg:text-3xl font-semibold lg:font-bold'>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -41,12 +50,13 @@ const FeaturedPosts = () => {
                     <div className="w-2/3">
 
                         {/* details */}
-                        <div className="flex items-center gap-4 text-sm lg:text-base mb-4">
+                        <div className="flex items-center gap-2 text-sm lg:text-base mb-4">
                             <h1 className='font-semibold'>02.</h1>
                             <Link className='text-blue-800'>Web Design</Link>
+                            <span>|</span>
                             <span className="text-gray-500 text-sm">2 days ago</span>
                         </div>
-                    
+
                         {/* title */}
                         <Link to="/test" className='text-base sm:text-lg md:text-2xl lg:text-xl xl:text-2xl font-medium'>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -66,12 +76,13 @@ const FeaturedPosts = () => {
                     <div className="w-2/3">
 
                         {/* details */}
-                        <div className="flex items-center gap-4 text-sm lg:text-base mb-4">
+                        <div className="flex items-center gap-2 text-sm lg:text-base mb-4">
                             <h1 className='font-semibold'>03.</h1>
                             <Link className='text-blue-800'>Web Design</Link>
+                            <span>|</span>
                             <span className="text-gray-500 text-sm">2 days ago</span>
                         </div>
-                    
+
                         {/* title */}
                         <Link to="/test" className='text-base sm:text-lg md:text-2xl lg:text-xl xl:text-2xl font-medium'>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -91,12 +102,13 @@ const FeaturedPosts = () => {
                     <div className="w-2/3">
 
                         {/* details */}
-                        <div className="flex items-center gap-4 text-sm lg:text-base mb-4">
+                        <div className="flex items-center gap-2 text-sm lg:text-base mb-4">
                             <h1 className='font-semibold'>04.</h1>
                             <Link className='text-blue-800'>Web Design</Link>
+                            <span>|</span>
                             <span className="text-gray-500 text-sm">2 days ago</span>
                         </div>
-                    
+
                         {/* title */}
                         <Link to="/test" className='text-base sm:text-lg md:text-2xl lg:text-xl xl:text-2xl font-medium'>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
