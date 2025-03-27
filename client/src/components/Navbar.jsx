@@ -27,18 +27,20 @@ const Navbar = () => {
                 </div>
 
                 {/* links */}
-                <div className={`w-full h-screen py-12 flex flex-col items-center justify-start gap-8 text-lg bg-gray-100 absolute top-16 transition-all ease-in-out ${open ? "-right-0" : "-right-[100%]"}`}>
-                    <Link to="/">Home</Link>
-                    <Link to="/">Trending</Link>
-                    <Link to="/">Most Popular</Link>
-                    <Link to="/about">About</Link>
-                    <SignedOut>
-                        <Link to="/login"><button className='py-2 px-4 rounded-2xl bg-blue-400 text-white cursor-pointer'>Login</button></Link>
-                    </SignedOut>
-                    <SignedIn>
-                        <UserButton />
-                    </SignedIn>
-                </div>
+                {open && (
+                    <div className={`w-full h-screen py-12 flex flex-col items-center justify-start gap-8 text-lg bg-gray-100 absolute top-16 transition-all ease-in-out ${open ? "-right-0" : "-right-[100%]"}`}>
+                        <Link to="/">Home</Link>
+                        <Link to="/">Trending</Link>
+                        <Link to="/">Most Popular</Link>
+                        <Link to="/about">About</Link>
+                        <SignedOut>
+                            <Link to="/login"><button className='py-2 px-4 rounded-2xl bg-blue-400 text-white cursor-pointer'>Login</button></Link>
+                        </SignedOut>
+                        <SignedIn>
+                            <UserButton />
+                        </SignedIn>
+                    </div>
+                )}
             </div>
             {/* desktop menu */}
             <div className="hidden md:flex items-center gap-8 xl:gap-12">

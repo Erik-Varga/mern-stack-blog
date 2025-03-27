@@ -21,13 +21,11 @@ const FeaturedPosts = () => {
                     <span className="text-gray-500">2 days ago</span>
                 </div>
 
-                <div className='flex items-center gap-2 text-gray-400 text-sm'>
+                <div className='flex flex-wrap items-center gap-2 text-gray-400 text-sm'>
                     <span>Written by</span>
                     <Link>Erik Varga</Link>
                     <span>|</span>
                     <Link>Web Design</Link>
-                    <span>|</span>
-                    <span>2 days ago</span>
                 </div>
 
                 {/* title */}
@@ -50,7 +48,7 @@ const FeaturedPosts = () => {
                     <div className="w-2/3">
 
                         {/* details */}
-                        <div className="flex items-center gap-2 text-sm lg:text-base mb-4">
+                        <div className="flex flex-wrap sm:flex-row sm:items-center gap-2 text-sm lg:text-base mb-4">
                             <h1 className='font-semibold'>02.</h1>
                             <Link className='text-blue-800'>Web Design</Link>
                             <span>|</span>
@@ -76,8 +74,8 @@ const FeaturedPosts = () => {
                     <div className="w-2/3">
 
                         {/* details */}
-                        <div className="flex items-center gap-2 text-sm lg:text-base mb-4">
-                            <h1 className='font-semibold'>03.</h1>
+                        <div className="flex flex-wrap sm:flex-row sm:items-center gap-2 text-sm lg:text-base mb-4">
+                            <h1 className='font-semibold'>02.</h1>
                             <Link className='text-blue-800'>Web Design</Link>
                             <span>|</span>
                             <span className="text-gray-500 text-sm">2 days ago</span>
@@ -102,8 +100,8 @@ const FeaturedPosts = () => {
                     <div className="w-2/3">
 
                         {/* details */}
-                        <div className="flex items-center gap-2 text-sm lg:text-base mb-4">
-                            <h1 className='font-semibold'>04.</h1>
+                        <div className="flex flex-wrap sm:flex-row sm:items-center gap-2 text-sm lg:text-base mb-4">
+                            <h1 className='font-semibold'>02.</h1>
                             <Link className='text-blue-800'>Web Design</Link>
                             <span>|</span>
                             <span className="text-gray-500 text-sm">2 days ago</span>
