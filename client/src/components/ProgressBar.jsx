@@ -20,11 +20,10 @@ const ProgressBar = (props) => {
   }
 
   const labelStyles = {
-    padding: 5,
+    padding: 10,
     color: 'white',
     fontWeight: 'bold'
   }
-
 
   return (
     <div style={containerStyles}>

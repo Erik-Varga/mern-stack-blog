@@ -5,6 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import PostMenuActions from '../components/PostMenuActions';
 import Search from '../components/Search';
+import Comments from '../components/Comments';
 
 const SinglePostPage = () => {
   return (
@@ -18,9 +19,10 @@ const SinglePostPage = () => {
           </h1>
           <div className='flex items-center gap-2 text-gray-400 text-sm'>
             <span className=''>Written by</span>
-            <Link className='text-blue-800'>John Doe</Link>
-            <span className=''>on</span>
+            <Link className='text-blue-800'>Erik Varga</Link>
+            <span className=''>|</span>
             <Link className='text-blue-800'>Web Design</Link>
+            <span className=''>|</span>
             <span className=''>2 days ago</span>
           </div>
           <p className='text-gray-500 font-medium italic'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit itaque placeat tempora nemo velit, earum molestias mollitia enim. Eius ut reiciendis, sed eligendi dolor quidem ipsa possimus voluptate eos porro!</p>
@@ -64,7 +66,7 @@ const SinglePostPage = () => {
             <div className="flex flex-col gap-4">
 
               <div className="flex items-center gap-8">
-                <Image src="ev_icon_pic.jpg" className="w-12 h-12 rounded-full object-cover" w="48" h="48" />
+                <Image src="userImg.jpeg" className="w-12 h-12 rounded-full object-cover" w="48" h="48" />
                 <Link className='text-blue-800'>Erik Varga</Link>
               </div>
               <p className='text-sm text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nam optio molestias amet assumenda modi.</p>
@@ -89,9 +91,9 @@ const SinglePostPage = () => {
             <h1 className='mt-8 mb-2 text-sm font-medium'>Search</h1>
             <Search />
           </div>
-
-
         </div>
+
+        <Comments />
       </div>
     </div>
   )
