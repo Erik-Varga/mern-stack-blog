@@ -12,7 +12,7 @@ const FeaturedPosts = () => {
                 {/* image */}
                 <img src="https://images.unsplash.com/photo-1742654230443-7c19cb55cd46?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-3xl object-cover" />
 
-                {/* <Image src="featured1.jpeg" className="rounded-3xl object-cover" /> */}
+                {/* <Image src="featured1.jpeg" className="rounded-3xl object-cover" w="895" /> */}
 
                 {/* details */}
                 <div className="flex items-center gap-4">
@@ -31,9 +31,11 @@ const FeaturedPosts = () => {
             <div className="w-full lg:w-1/2 flex flex-col gap-4">
                 {/* second */}
                 <div className="lg:h-1/3 flex justify-between gap-4">
-                    <img src="https://images.unsplash.com/photo-1600389909356-02d673eff36f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-3xl object-cover w-1/3 aspect-video" />
+                    <div className="w-1/3 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1600389909356-02d673eff36f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-3xl object-cover w-full h-full" w="298" />
 
-                    {/* <Image src="featured2.jpeg" className="rounded-3xl object-cover w-1/3 aspect-video" /> */}
+                        {/* <Image src="featured2.jpeg" className="rounded-3xl object-cover w="298" /> */}
+                    </div>
 
                     {/* details and title */}
                     <div className="w-2/3">
@@ -54,9 +56,11 @@ const FeaturedPosts = () => {
 
                 {/* third */}
                 <div className="lg:h-1/3 flex justify-between gap-4">
-                    <img src="https://images.unsplash.com/photo-1604328471151-b52226907017?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-3xl object-cover w-1/3 aspect-video" />
+                    <div className="w-1/3 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1604328471151-b52226907017?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-3xl object-cover w-full h-full" w="298" />
 
-                    {/* <Image src="featured3.jpeg" className="rounded-3xl object-cover w-1/3 aspect-video" /> */}
+                        {/* <Image src="featured3.jpeg" className="rounded-3xl object-cover" w="298" /> */}
+                    </div>
 
                     {/* details and title */}
                     <div className="w-2/3">
@@ -77,9 +81,11 @@ const FeaturedPosts = () => {
 
                 {/* fourth */}
                 <div className="lg:h-1/3 flex justify-between gap-4">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-3xl object-cover w-1/3 aspect-video" />
+                    <div className="w-1/3 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-3xl object-cover w-full h-full" w="298" />
 
-                    {/* <Image src="featured4.jpeg" className="rounded-3xl object-cover w-1/3 aspect-video" /> */}
+                        {/* <Image src="featured4.jpeg" className="rounded-3xl object-cover" w="298" /> */}
+                    </div>
 
                     {/* details and title */}
                     <div className="w-2/3">
