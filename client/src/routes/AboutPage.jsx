@@ -3,7 +3,7 @@ import ProgressBar from '../components/ProgressBar'
 
 const AboutPage = () => {
     const current_hrs = 1;
-    const current_mins = 46;
+    const current_mins = 59;
     
     const total_hrs = 6;
     const total_mins = 13;
