@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaMoon, FaSun } from 'react-icons/fa';
 import { IoClose } from "react-icons/io5";
 import Image from './Image';
 import { Link } from 'react-router-dom';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
+import ToggleDarkMode from './ToggleDarkMode';
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className='w-full h-16 md:h-20 flex items-center justify-between bg-gray-100'>
+        <div className='w-full h-16 md:h-20 flex items-center justify-between bg-gray-100 dark:bg-gray-800'>
             {/* logo */}
             <Link to="/" className="flex items-center gap-4 text-2xl font-bold">
                 <Image src="favicon.jpg" alt="Spudev Logo" className='w-8 h-8 border-gray-900 rounded-sm shadow-md' />
@@ -55,6 +56,7 @@ const Navbar = () => {
                 <SignedIn>
                     <UserButton />
                 </SignedIn>
+                <ToggleDarkMode />
             </div>
         </div>
     )

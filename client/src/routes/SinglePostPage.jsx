@@ -19,13 +19,13 @@ const SinglePostPage = () => {
           </h1>
           <div className='flex items-center gap-2 text-gray-400 text-sm'>
             <span className=''>Written by</span>
-            <Link className='text-blue-800'>Erik Varga</Link>
+            <Link className='text-blue-800 dark:text-blue-200'>Erik Varga</Link>
             <span className=''>|</span>
-            <Link className='text-blue-800'>Web Design</Link>
+            <Link className='text-blue-800 dark:text-blue-200'>Web Design</Link>
             <span className=''>|</span>
             <span className=''>2 days ago</span>
           </div>
-          <p className='text-gray-500 font-medium italic'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit itaque placeat tempora nemo velit, earum molestias mollitia enim. Eius ut reiciendis, sed eligendi dolor quidem ipsa possimus voluptate eos porro!</p>
+          <p className='text-gray-500 dark:text-gray-400 font-medium italic'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit itaque placeat tempora nemo velit, earum molestias mollitia enim. Eius ut reiciendis, sed eligendi dolor quidem ipsa possimus voluptate eos porro!</p>
         </div>
         <div className="hidden md:block w-full">
           <Image src="postImg.jpeg" w="600" className="rounded-2xl" />
@@ -61,13 +61,13 @@ const SinglePostPage = () => {
           </div>
 
           {/* menu */}
-          <div className="px-4 h-max sticky top-8 bg-gray-200 pt-2 pb-8 rounded-sm shadow-md">
+          <div className="px-4 h-max sticky top-8 bg-gray-200 dark:bg-gray-700 pt-2 pb-8 rounded-sm shadow-md">
             <h1 className='mb-2 text-sm font-medium'>Author</h1>
             <div className="flex flex-col gap-4">
 
               <div className="flex items-center gap-8">
                 <Image src="userImg2.jpeg" className="w-12 h-12 rounded-full object-cover" w="48" h="48" />
-                <Link className='text-blue-800'>Erik Varga</Link>
+                <Link className='text-blue-800 dark:text-blue-200'>Erik Varga</Link>
               </div>
               <p className='text-sm text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nam optio molestias amet assumenda modi.</p>
               <div className="flex gap-2">

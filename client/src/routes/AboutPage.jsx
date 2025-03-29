@@ -2,8 +2,8 @@ import React from 'react'
 import ProgressBar from '../components/ProgressBar'
 
 const AboutPage = () => {
-    const current_hrs = 1;
-    const current_mins = 59;
+    const current_hrs = 2;
+    const current_mins = 10;
     
     const total_hrs = 6;
     const total_mins = 13;
@@ -14,7 +14,7 @@ const AboutPage = () => {
     const final_pct_var = Math.round((combined_current_time / combined_total_time) * 100).toFixed(0);
 
     const testData = [
-        { bgcolor: "#ffa07a", completed: final_pct_var},
+        { bgcolor: "#1aa7ec", completed: final_pct_var},
     ]
     
   return (

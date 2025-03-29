@@ -17,7 +17,7 @@ const FeaturedPosts = () => {
                 {/* details */}
                 <div className="flex items-center gap-4">
                     <h1 className="font-semibold lg:text-lg">01.</h1>
-                    <Link className="text-blue-800 lg:text-lg">Web Design</Link>
+                    <Link className="text-blue-800 dark:text-blue-400 lg:text-lg">Web Design</Link>
                     <span className="text-gray-500">2 days ago</span>
                 </div>
 
@@ -50,7 +50,7 @@ const FeaturedPosts = () => {
                         {/* details */}
                         <div className="flex flex-wrap sm:flex-row sm:items-center gap-2 text-sm lg:text-base mb-4">
                             <h1 className='font-semibold'>02.</h1>
-                            <Link className='text-blue-800'>Web Design</Link>
+                            <Link className='text-blue-800 dark:text-blue-400'>Web Design</Link>
                             <span>|</span>
                             <span className="text-gray-500 text-sm">2 days ago</span>
                         </div>
@@ -76,7 +76,7 @@ const FeaturedPosts = () => {
                         {/* details */}
                         <div className="flex flex-wrap sm:flex-row sm:items-center gap-2 text-sm lg:text-base mb-4">
                             <h1 className='font-semibold'>02.</h1>
-                            <Link className='text-blue-800'>Web Design</Link>
+                            <Link className='text-blue-800 dark:text-blue-400'>Web Design</Link>
                             <span>|</span>
                             <span className="text-gray-500 text-sm">2 days ago</span>
                         </div>
@@ -102,7 +102,7 @@ const FeaturedPosts = () => {
                         {/* details */}
                         <div className="flex flex-wrap sm:flex-row sm:items-center gap-2 text-sm lg:text-base mb-4">
                             <h1 className='font-semibold'>02.</h1>
-                            <Link className='text-blue-800'>Web Design</Link>
+                            <Link className='text-blue-800 dark:text-blue-400'>Web Design</Link>
                             <span>|</span>
                             <span className="text-gray-500 text-sm">2 days ago</span>
                         </div>
