@@ -41,6 +41,7 @@ const Navbar = () => {
                         <SignedIn>
                             <UserButton />
                         </SignedIn>
+                        <ToggleDarkMode />
                     </div>
                 )}
             </div>
@@ -51,7 +52,7 @@ const Navbar = () => {
                 <Link to="/">Most Popular</Link>
                 <Link to="/about">About</Link>
                 <SignedOut>
-                    <Link to="/"><button className='py-2 px-4 rounded-2xl bg-blue-400 text-white cursor-pointer'>Login</button></Link>
+                    <Link to="/login"><button className='py-2 px-4 rounded-2xl bg-blue-400 text-white cursor-pointer'>Login</button></Link>
                 </SignedOut>
                 <SignedIn>
                     <UserButton />
