@@ -3,9 +3,10 @@ import { createPost, deletePost, getPost, getPosts } from "../controllers/post.c
 
 const router = express.Router();
 
+// endpoints
 router.get("/", getPosts);
 router.get("/:slug", getPost);
 router.post("/", createPost);
 router.delete("/:id", deletePost);
 
-export default router;
+export default router

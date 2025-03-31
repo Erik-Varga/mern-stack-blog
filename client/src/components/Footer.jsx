@@ -5,7 +5,7 @@ import { FaReact } from 'react-icons/fa';
 
 import { IoLogoJavascript } from "react-icons/io";
 import { TbBrandMongodb, TbBrandTailwind } from 'react-icons/tb';
-import { SiDotenv, SiExpress, SiMongoose, SiNodemon } from "react-icons/si";
+import { SiExpress, SiNodemon } from "react-icons/si";
 import { SiClerk } from "react-icons/si";
 
 const Footer = () => {
@@ -24,16 +24,14 @@ const Footer = () => {
                 Source Code |&nbsp;
                 </a>
             </span>
-            <span className='text-xs text-slate-400'>Developed using:  <strong>React &#x2022; JavaScript &#x2022; Tailwind CSS &#x2022; MongoDB &#x2022; Express &#x2022; DotEnv &#x2022; Cors &#x2022; NodeMon &#x2022; Mongoose &#x2022; Clerk</strong></span>
+            <span className='text-xs text-slate-400'>Developed using:  <strong> MongoDB &#x2022; Express &#x2022; React &#x2022; NodeMon &#x2022;  JavaScript &#x2022; Tailwind CSS &#x2022; Clerk</strong></span>
             <span className='flex justify-center gap-2 text-slate-400 mt-1'>
-                <FaReact size={size} />
-                <IoLogoJavascript  size={size} />
-                <TbBrandTailwind size={size} />
                 <TbBrandMongodb size={size} />
                 <SiExpress size={size} />
-                <SiDotenv size={size} />
+                <FaReact size={size} />
                 <SiNodemon size={size} />
-                <SiMongoose size={size} />
+                <IoLogoJavascript  size={size} />
+                <TbBrandTailwind size={size} />
                 <SiClerk size={size} />
             </span>
         </div>

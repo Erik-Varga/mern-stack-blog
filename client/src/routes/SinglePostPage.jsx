@@ -9,15 +9,17 @@ import Comments from '../components/Comments';
 
 const SinglePostPage = () => {
   return (
-    <div className="h-full flex flex-col gap-8">
-
-      {/* detail */}
-      <div className="flex gap-8">
+    <div className="flex flex-col gap-8">
+      <div className='flex gap-8'>
         <div className="md:w-full flex flex-col gap-8">
+
+          {/* title */}
           <h1 className='text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-semibold'>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi est, magnam.
           </h1>
-          <div className='flex items-center gap-2 text-gray-400 text-sm'>
+
+          {/* post info */}
+          <div className='flex flex-wrap items-center gap-2 text-gray-400 text-sm'>
             <span className=''>Written by</span>
             <Link className='text-blue-800 dark:text-blue-200'>Erik Varga</Link>
             <span className=''>|</span>
@@ -25,8 +27,11 @@ const SinglePostPage = () => {
             <span className=''>|</span>
             <span className=''>2 days ago</span>
           </div>
+
+          {/* post summary */}
           <p className='text-gray-500 dark:text-gray-400 font-medium italic'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit itaque placeat tempora nemo velit, earum molestias mollitia enim. Eius ut reiciendis, sed eligendi dolor quidem ipsa possimus voluptate eos porro!</p>
         </div>
+
         <div className="hidden md:block w-full">
           <Image src="postImg.jpeg" w="600" className="rounded-2xl" />
         </div>
