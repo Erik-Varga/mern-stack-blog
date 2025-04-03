@@ -38,36 +38,36 @@ const AboutPage = () => {
       <h1 className='font-bold mb-5'>About</h1>
 
       <div className="flex items-center gap-2">
-        <img src="ev_icon_pic.jpg" alt="" className='h-15 w-15 rounded-full shadow-md' />
+        <img src="ev_icon_pic.jpg" alt="" className='h-12 w-12 rounded-full shadow-md' />
         Erik Varga | Developer
       </div>
 
 
-      <p className='mt-4 italic'>Technologies used in this MERN Stack project include:</p>
+      <p className='mt-4'>Technologies used in this MERN Stack project include:</p>
 
-      <div class="hidden sm:block mt-5 rounded-md relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table class="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <div className="hidden sm:block mt-5 rounded-md relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table className="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Name
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Description
               </th>
             </tr>
           </thead>
           <tbody>
-          {techData.map((tech, index) => (
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  <div className="flex items-center gap-2">
+          {techData.map((tech, idx) => (
+              <tr key={idx} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  <span className="flex items-center gap-2">
                     <span className="text-2xl">
                       {tech.Icon}
                     </span>
                     {tech.name}
-                  </div>
-                </th>
+                  </span>
+                </td>
                 <td className="px-6 py-4">
                   {tech.description}
                 </td>
@@ -77,20 +77,20 @@ const AboutPage = () => {
         </table>
       </div>
 
-      <div class="block sm:hidden mt-5 rounded-md relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table class="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <div className="block sm:hidden mt-5 rounded-md relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table className="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Name - Description
               </th>
             </tr>
           </thead>
           <tbody>
-          {techData.map((tech, index) => (
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white">
-                  <div className="flex flex-wrap items-center gap-2">
+          {techData.map((tech, idx) => (
+              <tr key={idx} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <td scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white">
+                  <span className="flex flex-wrap items-center gap-2">
                     <span className="text-2xl">
                       {tech.Icon}
                     </span>
@@ -98,8 +98,8 @@ const AboutPage = () => {
                       {tech.name}
                     </span>
                     <span className='font-light'> - {tech.description}</span>
-                  </div>
-                </th>
+                  </span>
+                </td>
                 <td className="px-6 py-4">
                 </td>
               </tr>
@@ -108,14 +108,14 @@ const AboutPage = () => {
         </table>
       </div>
 
-      {progressData.map((item, idx) => (
+      {/* {progressData.map((item, idx) => (
         <div className='mt-5'>
           <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} />
           <span className='text-xs'>
             {combined_current_time} | {combined_total_time}
           </span>
         </div>
-      ))}
+      ))} */}
 
     </div>
   )
