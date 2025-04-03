@@ -6,6 +6,7 @@ import { FaGithub, FaGithubAlt, FaGithubSquare, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
 import { FaXTwitter } from "react-icons/fa6";
 import { LuDrum } from "react-icons/lu";
+import Timeline from '../components/Timeline';
 
 const AboutPage = () => {
   const current_hrs = 3;
@@ -36,7 +37,7 @@ const AboutPage = () => {
   ]
 
   return (
-    <div className='h-full m-4'>
+    <div className='h-full mt-20 '>
       <h1 className='font-bold mb-5'>About</h1>
 
       <div className="flex items-center gap-2 p-2">
@@ -132,6 +133,7 @@ const AboutPage = () => {
         </div>
       ))}
 
+      {/* <Timeline /> */}
     </div>
   )
 }

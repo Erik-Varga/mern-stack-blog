@@ -15,7 +15,7 @@ const Write = () => {
   }
 
   return (
-    <div className='h-full flex flex-col gap-6'>
+    <div className='h-full mt-20 flex flex-col gap-6'>
       <h1 className='text-xl font-light'>Create a New Post</h1>
 
       {/* form */}

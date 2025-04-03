@@ -7,7 +7,7 @@ import PostList from '../components/PostList';
 
 const Homepage = () => {
   return (
-    <div className='h-full mt-4 flex flex-col gap-4'>
+    <div className='h-full mt-20 flex flex-col gap-4'>
 
       {/* Breadcrumb */}
       <div className="flex gap-4">

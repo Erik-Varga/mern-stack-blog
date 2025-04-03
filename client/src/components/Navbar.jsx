@@ -14,87 +14,59 @@ const Navbar = () => {
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
+    const [nav, setNav] = useState(false);
+
+    const handleClick = () => {
+        setNav(!nav);
+    }
+
     return (
-        <div className='w-full h-16 md:h-20 flex items-center justify-between bg-gray-100 dark:bg-gray-800'>
-            {/* logo */}
-            <Link to="/" onClick={closeModal} className="flex items-center gap-4 text-2xl font-bold">
-                <Image src="favicon.jpg" alt="Spudev Logo" className='w-8 h-8 border-gray-900 rounded-sm shadow-md' />
-                <span>spudevlog</span>
-            </Link>
+        <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 z-50">
+            <div className="flex align-items justify-between gap-2">
+                {/* logo */}
+                <Link to="/" className='mr-10'>
+                    <Image src="favicon.jpg" alt="Spudev Logo" className='w-8 h-8 border-gray-900 rounded-sm shadow-md' />
+                    <span className='text-xs text-gray-800 dark:text-gray-200'>spudevlog</span>
+                </Link>
+
+                <ul className="hidden md:flex items-center gap-10 justify-start ml-5">
+                    <li><Link to='/' smooth={true} duration={500} className="hover:text-color1">Home</Link></li>
+                    <li><Link to='/' smooth={true} duration={500} className="hover:text-color1">Trending</Link></li>
+                    <li><Link to='/' smooth={true} duration={500} className="hover:text-color1">Most Popular</Link></li>
+                    <li><Link to='/about' smooth={true} duration={500} className="hover:text-color1">About</Link></li>
+                    <li><Link to='/write' smooth={true} duration={500} className="hover:text-color1">Write</Link></li>
+                    <SignedOut>
+                        <Link to="/login"><button className='py-2 px-4 rounded-2xl bg-blue-400 text-white cursor-pointer'>Login</button></Link>
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
+                    <ToggleDarkMode />
+                </ul>
+            </div>
+            {/* menu */}
 
             {/* hamburger menu */}
-            <div className="md:hidden z-100">
-                <div className="mr-5 text-xl">
-                    <button onClick={() => setIsModalOpen(!isModalOpen)}>{isModalOpen ? <></> : <FaBars />}</button>
-                </div>
-                <Modal isOpen={isModalOpen} onClose={closeModal}>
-                    <div className='z-100 text-2xl flex flex-col justify-start items-center gap-4 absolute top-0 left-0 w-full h-screen bg-gray-100 dark:bg-gray-800'>
-                        <div className="text-2xl flex justify-end w-full mt-5 mr-10">
-                            <button onClick={() => setIsModalOpen(!isModalOpen)}>{isModalOpen ? <IoClose /> : <></>}</button>
-                        </div>
-                        <Link to="/" onClick={closeModal}>Home</Link>
-                        <Link to="/" onClick={closeModal}>Trending</Link>
-                        <Link to="/" onClick={closeModal}>Most Popular</Link>
-                        <Link to="/about" onClick={closeModal}>About</Link>
-                        {/* <Link to="/write">Write</Link> */}
-                        <SignedOut>
-                            <Link to="/login" onClick={closeModal}><button className='py-2 px-4 rounded-2xl bg-blue-400 hover:bg-blue-500 text-white cursor-pointer'>Login</button></Link>
-                        </SignedOut>
-                        <SignedIn>
-                            <UserButton />
-                        </SignedIn>
-                        <ToggleDarkMode />
-                    </div>
-                </Modal>
-
-
-
-
-
-                {/* button */}
-                {/* <div className="mr-2 cursor-pointer text-2xl flex items-center justify-center"
-                    onClick={() => setOpen((prev) => !prev)}
-                > */}
-
-                {/* {open ? <IoClose /> : <FaBars />} */}
-                {/* <Hamburger /> */}
-                {/* </div> */}
-
-
-                {/* links */}
-                {/* {open && (
-                    <div className={`w-full h-screen py-12 flex flex-col items-center justify-start gap-8 text-lg bg-gray-100 dark:bg-gray-900 absolute top-16 transition-all ease-in-out ${open ? "-right-0" : "-right-[100%]"}`}>
-                        <Link to="/">Home</Link>
-                        <Link to="/">Trending</Link>
-                        <Link to="/">Most Popular</Link>
-                        <Link to="/about">About</Link>
-                        <Link to="/write">Write</Link>
-                        <SignedOut>
-                            <Link to="/login"><button className='py-2 px-4 rounded-2xl bg-blue-400 text-white cursor-pointer'>Login</button></Link>
-                        </SignedOut>
-                        <SignedIn>
-                            <UserButton />
-                        </SignedIn>
-                        <ToggleDarkMode />
-                    </div>
-                )} */}
+            <div className="md:hidden text-2xl z-10 mr-5 cursor-pointer hover:text-[#ccd6f6]" onClick={handleClick}>
+                {!nav ? <FaBars /> : <IoClose />}
             </div>
 
-            {/* desktop menu */}
-            <div className="hidden md:flex items-center gap-8 xl:gap-12">
-                <Link to="/">Home</Link>
-                <Link to="/">Trending</Link>
-                <Link to="/">Most Popular</Link>
-                <Link to="/about">About</Link>
-                {/* <Link to="/write">Write</Link> */}
+            {/* mobile menu */}
+            <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-gray-100 dark:bg-[#0a192f] flex flex-col justify-center items-center gap-5 transition duration-200 ease-in-out'}>
+
+                <li><Link to='/' onClick={handleClick} smooth={true} duration={500} className="hover:text-color1">Home</Link></li>
+                <li><Link to='/' onClick={handleClick} smooth={true} duration={500} className="hover:text-color1">Trending</Link></li>
+                <li><Link to='/' onClick={handleClick} smooth={true} duration={500} className="hover:text-color1">Most Popular</Link></li>
+                <li><Link to='/about' onClick={handleClick} smooth={true} duration={500} className="hover:text-color1">About</Link></li>
+                <li><Link to='/write' onClick={handleClick} smooth={true} duration={500} className="hover:text-color1">Write</Link></li>
                 <SignedOut>
-                    <Link to="/login"><button className='py-2 px-4 rounded-2xl bg-blue-400 text-white cursor-pointer'>Login</button></Link>
+                    <Link to="/login" onClick={handleClick}><button className='py-2 px-4 rounded-2xl bg-blue-400 text-white cursor-pointer'>Login</button></Link>
                 </SignedOut>
                 <SignedIn>
                     <UserButton />
                 </SignedIn>
                 <ToggleDarkMode />
-            </div>
+            </ul>
         </div>
     )
 }
