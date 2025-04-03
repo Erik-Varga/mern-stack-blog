@@ -15,13 +15,13 @@ const Write = () => {
   }
 
   return (
-    <div className='h-full mt-20 flex flex-col gap-6'>
-      <h1 className='text-xl font-light'>Create a New Post</h1>
+    <div className='h-full mt-24'>
+      <h1 className='text-2xl text-gray-800 mb-5'>Create a New Post</h1>
 
       {/* form */}
       <form className="flex flex-col gap-6 flex-1 mb-6">
-          <button className="w-max p-2 shadow-md rounded-xl text-sm text-gray-500">Add a cover image</button>
-          <input type="text" placeholder='My Awesome Story' className='text-4xl font-semibold bg-transparent outline-none' />
+          <button className="w-max p-2 shadow-md rounded-xl text-sm text-gray-500 cursor-pointer hover:bg-gray-200 hover:text-gray-800 dark:hover:bg-gray-700 dark:hover:text-gray-100">Add a cover image</button>
+          <input type="text" placeholder='My Awesome Story' className='text-3xl font-semibold bg-transparent outline-none' />
 
           <div className="flex items-center gap-4">
             <label htmlFor="" className='text-sm'>Choose a category:</label>

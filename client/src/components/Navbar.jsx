@@ -7,6 +7,8 @@ import { SignedIn, SignedOut, SignInButton, useAuth, UserButton } from '@clerk/c
 import ToggleDarkMode from './ToggleDarkMode';
 import Hamburger from './HamburgerComponent';
 import Modal from './MenuModal';
+import { LuLogIn } from 'react-icons/lu';
+import LoginComponent from './LoginComponent';
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -36,7 +38,7 @@ const Navbar = () => {
                     <li><Link to='/about' smooth={true} duration={500} className="hover:text-color1">About</Link></li>
                     <li><Link to='/write' smooth={true} duration={500} className="hover:text-color1">Write</Link></li>
                     <SignedOut>
-                        <Link to="/login"><button className='py-2 px-4 rounded-2xl bg-blue-400 text-white cursor-pointer'>Login</button></Link>
+                        <LoginComponent />
                     </SignedOut>
                     <SignedIn>
                         <UserButton />
@@ -60,7 +62,7 @@ const Navbar = () => {
                 <li><Link to='/about' onClick={handleClick} smooth={true} duration={500} className="hover:text-color1">About</Link></li>
                 <li><Link to='/write' onClick={handleClick} smooth={true} duration={500} className="hover:text-color1">Write</Link></li>
                 <SignedOut>
-                    <Link to="/login" onClick={handleClick}><button className='py-2 px-4 rounded-2xl bg-blue-400 text-white cursor-pointer'>Login</button></Link>
+                    <Link to="/login" onClick={handleClick}><button className='py-2 px-4 rounded-2xl bg-blue-400 hover:bg-blue-500 text-white text-2xl cursor-pointer'><LuLogIn title='Login' /></button></Link>
                 </SignedOut>
                 <SignedIn>
                     <UserButton />

@@ -1,20 +1,26 @@
-import React from 'react'
-import { FaArrowUp } from 'react-icons/fa';
+import React, { useEffect } from 'react'
+import { FaArrowUp, FaHome } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import MainCategories from '../components/MainCategories';
 import FeaturedPosts from '../components/FeaturedPosts';
 import PostList from '../components/PostList';
 
 const Homepage = () => {
-  return (
-    <div className='h-full mt-20 flex flex-col gap-4'>
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
-      {/* Breadcrumb */}
-      <div className="flex gap-4">
-        <Link to="/">Home</Link>
-        <span>•</span>
-        <span className='text-blue-800 dark:text-blue-400'>Blogs and Articles</span>
-      </div>
+  return (
+    <div className='h-full mt-24'>
+      <h1 className='text-2xl text-gray-800 mb-5'>
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-4">
+          <Link to="/"><FaHome /></Link>
+          <span>•</span>
+          <span className='text-blue-800 dark:text-blue-400'>Blogs and Articles</span>
+        </div>
+      </h1>
+
 
       {/* Introduction */}
       <div className="flex items-center justify-between">

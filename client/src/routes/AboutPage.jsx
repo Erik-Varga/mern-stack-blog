@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProgressBar from '../components/ProgressBar'
 import { TbBrandMongodb, TbBrandTailwind, TbBrandTwitter } from 'react-icons/tb';
 import { SiClerk, SiExpress, SiFacebook, SiGithub, SiLinkedin, SiNodemon, SiPostman } from 'react-icons/si';
@@ -6,7 +6,6 @@ import { FaGithub, FaGithubAlt, FaGithubSquare, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
 import { FaXTwitter } from "react-icons/fa6";
 import { LuDrum } from "react-icons/lu";
-import Timeline from '../components/Timeline';
 
 const AboutPage = () => {
   const current_hrs = 3;
@@ -36,9 +35,13 @@ const AboutPage = () => {
     { name: "Github", Icon: <FaGithub />, description: "Github is used for version control and development storage." },
   ]
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
-    <div className='h-full mt-20 '>
-      <h1 className='font-bold mb-5'>About</h1>
+    <div className='h-full mt-24'>
+      <h1 className='text-2xl text-gray-800 mb-5'>About</h1>
 
       <div className="flex items-center gap-2 p-2">
         <img src="ev_icon_pic.jpg" alt="" className='h-12 w-12 rounded-full shadow-md' />
@@ -124,6 +127,7 @@ const AboutPage = () => {
         </table>
       </div>
 
+      <div className='mt-20'></div>
       {progressData.map((item, idx) => (
         <div className='mt-5'>
           <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} />
@@ -133,7 +137,7 @@ const AboutPage = () => {
         </div>
       ))}
 
-      {/* <Timeline /> */}
+
     </div>
   )
 }
