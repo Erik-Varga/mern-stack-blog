@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from './../components/Image';
 import { Link } from 'react-router-dom';
 import { FaFacebook } from "react-icons/fa";
@@ -8,6 +8,10 @@ import Search from '../components/Search';
 import Comments from '../components/Comments';
 
 const SinglePostPage = () => {
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [])
+
   return (
     <div className="flex flex-col gap-8">
       <div className='flex gap-8'>

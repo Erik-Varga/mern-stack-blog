@@ -32,14 +32,14 @@ const Navbar = () => {
                 </Link>
 
                 {/* nav */}
-                <ul className="hidden md:flex items-center gap-10 justify-start ml-5 text-sm">
-                    <li><Link to='/' smooth={true} duration={500} className="hover:text-black">Home</Link></li>
-                    <li><Link to='/' smooth={true} duration={500} className="hover:text-black">Trending</Link></li>
-                    <li><Link to='/' smooth={true} duration={500} className="hover:text-black">Popular</Link></li>
-                    <li><Link to='/about' smooth={true} duration={500} className="hover:text-black">About</Link></li>
-                    <li><Link to='/write' smooth={true} duration={500} className="hover:text-black">Write</Link></li>
+                <ul className="hidden md:flex items-center gap-10 justify-start ml-5 text-sm font-semibold">
+                    <li><Link to='/' smooth={true} duration={500} className="hover:text-blue-600">Home</Link></li>
+                    <li><Link to='/' smooth={true} duration={500} className="hover:text-blue-600">Trending</Link></li>
+                    <li><Link to='/' smooth={true} duration={500} className="hover:text-blue-600">Popular</Link></li>
+                    <li><Link to='/about' smooth={true} duration={500} className="hover:text-blue-600">About</Link></li>
+                    <li><Link to='/write' smooth={true} duration={500} className="hover:text-blue-600">Write</Link></li>
                     <SignedOut>
-                        <Link to="/login" onClick={handleClick}><button className='py-2 px-4 rounded-2xl bg-blue-400 hover:bg-blue-500 text-white text-2xl cursor-pointer'><LuLogIn title='Login' /></button></Link>
+                        <Link to="/login"><button className='py-2 px-4 rounded-2xl bg-blue-400 hover:bg-blue-500 text-white text-2xl cursor-pointer'><LuLogIn title='Login' /></button></Link>
                     </SignedOut>
                     <SignedIn>
                         <UserButton />
@@ -54,13 +54,13 @@ const Navbar = () => {
             </div>
 
             {/* hamburger menu */}
-            <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-gray-100 dark:bg-[#0a192f] flex flex-col justify-center items-center gap-5 transition duration-200 ease-in-out'}>
+            <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-gray-100 dark:bg-[#0a192f] font-semibold flex flex-col justify-center items-center gap-5 transition duration-200 ease-in-out'}>
 
-                <li><Link to='/' onClick={handleClick} smooth={true} duration={500} className="hover:text-color1">Home</Link></li>
-                <li><Link to='/' onClick={handleClick} smooth={true} duration={500} className="hover:text-color1">Trending</Link></li>
-                <li><Link to='/' onClick={handleClick} smooth={true} duration={500} className="hover:text-color1">Most Popular</Link></li>
-                <li><Link to='/about' onClick={handleClick} smooth={true} duration={500} className="hover:text-color1">About</Link></li>
-                <li><Link to='/write' onClick={handleClick} smooth={true} duration={500} className="hover:text-color1">Write</Link></li>
+                <li><Link to='/' onClick={handleClick} smooth={true} duration={500} className="text-gray-700 hover:text-blue-600">Home</Link></li>
+                <li><Link to='/' onClick={handleClick} smooth={true} duration={500} className="text-gray-700 hover:text-blue-600">Trending</Link></li>
+                <li><Link to='/' onClick={handleClick} smooth={true} duration={500} className="text-gray-700 hover:text-blue-600">Popular</Link></li>
+                <li><Link to='/about' onClick={handleClick} smooth={true} duration={500} className="text-gray-600 hover:text-blue-700">About</Link></li>
+                <li><Link to='/write' onClick={handleClick} smooth={true} duration={500} className="text-gray-600 hover:text-blue-700">Write</Link></li>
                 <SignedOut>
                     <Link to="/login" onClick={handleClick}><button className='py-2 px-4 rounded-2xl bg-blue-400 hover:bg-blue-500 text-white text-2xl cursor-pointer'><LuLogIn title='Login' /></button></Link>
                 </SignedOut>
@@ -68,6 +68,9 @@ const Navbar = () => {
                     <UserButton />
                 </SignedIn>
                 <ToggleDarkMode />
+                <div className="text-2xl z-10 text-gray-500 cursor-pointer hover:text-black" onClick={handleClick}>
+                {!nav ? <FaBars /> : <IoClose />}
+            </div>
             </ul>
         </div>
     )

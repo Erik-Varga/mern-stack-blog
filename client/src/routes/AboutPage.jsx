@@ -26,7 +26,7 @@ const AboutPage = () => {
 
   const techData = [
     { name: "MongoDB", Icon: <TbBrandMongodb />, description: "MongoDB is a cross-platform document-oriented NoSQL database program used to store the data." },
-    { name: "Express", Icon: <SiExpress />, description: "Express is a web application framework for NodeJS used for building the API." },
+    { name: "Express", Icon: <SiExpress />, description: "Express is a web application framework for Node JS used for building the API." },
     { name: "React JS", Icon: <FaReact />, description: "React is the frontend framework used to build the user interface and web application pages." },
     { name: "Node JS", Icon: <SiNodemon />, description: "Node is the server side runtime environment that provides the connection to the requests and responses." },
     { name: "Javascript", Icon: <IoLogoJavascript />, description: "JavaScript is the web application programming language." },
@@ -62,7 +62,7 @@ const AboutPage = () => {
         <div className=""><LuDrum /></div>
       </div>
 
-      <p className='mt-12 text-sm'>Technologies used in this MERN Stack project include:</p>
+      <p className='mt-12 text-sm'>Technologies used in this MERN Stack include:</p>
 
       <div className="hidden sm:block mt-5 rounded-md relative overflow-x-auto sm:rounded-lg">
         <table className="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
