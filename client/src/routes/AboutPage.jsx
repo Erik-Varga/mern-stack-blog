@@ -6,6 +6,7 @@ import { FaGithub, FaGithubAlt, FaGithubSquare, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
 import { FaXTwitter } from "react-icons/fa6";
 import { LuDrum } from "react-icons/lu";
+import { SiAxios } from 'react-icons/si';
 
 const AboutPage = () => {
   const current_hrs = 3;
@@ -25,12 +26,13 @@ const AboutPage = () => {
 
   const techData = [
     { name: "MongoDB", Icon: <TbBrandMongodb />, description: "MongoDB is a cross-platform document-oriented NoSQL database program used to store the data." },
-    { name: "Express", Icon: <SiExpress />, description: "Express is web application framework for NodeJS used for building the API." },
+    { name: "Express", Icon: <SiExpress />, description: "Express is a web application framework for NodeJS used for building the API." },
     { name: "React JS", Icon: <FaReact />, description: "React is the frontend framework used to build the user interface and web application pages." },
     { name: "Node JS", Icon: <SiNodemon />, description: "Node is the server side runtime environment that provides the connection to the requests and responses." },
     { name: "Javascript", Icon: <IoLogoJavascript />, description: "JavaScript is the web application programming language." },
     { name: "Tailwind CSS", Icon: <TbBrandTailwind />, description: "Tailwind CSS is the tool used to style the web application pages." },
     { name: "Clerk", Icon: <SiClerk />, description: "Clerk is the authorization provider used for session management." },
+    { name: "Axios", Icon: <SiAxios />, description: "Axios is a JS library used to make HTTP requests from web browsers and Node JS." },
     { name: "Postman", Icon: <SiPostman />, description: "Postman is a utility used to test the API routes." },
     { name: "Github", Icon: <FaGithub />, description: "Github is used for version control and development storage." },
   ]
