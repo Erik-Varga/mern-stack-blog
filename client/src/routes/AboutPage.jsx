@@ -46,7 +46,7 @@ const AboutPage = () => {
           <div className='font-semibold text-sm text-gray-500'>Developer, Orlando, FL</div>
         </div>
       </div>
-      <div className='mt-2 text-sm text-gray-500 dark:text-gray-200'>Hello, my name is Erik and I create stunning web applications.</div>
+      <div className='mt-5 text-sm text-gray-500 dark:text-gray-200'>Hello, my name is Erik and I create stunning web applications.</div>
 
       <div className="flex gap-2 text-gray-600 text-2xl mt-2">
         <div className=""><SiGithub /></div>
@@ -54,16 +54,11 @@ const AboutPage = () => {
         <div className=""><SiFacebook /></div>
         <div className=""><FaXTwitter /></div>
         <div className=""><LuDrum /></div>
-        
-        
+      </div>
 
-        
-        </div>
+      <p className='mt-12 text-sm'>Technologies used in this MERN Stack project include:</p>
 
-
-      <p className='mt-8 text-sm'>Technologies used in this MERN Stack project include:</p>
-
-      <div className="hidden sm:block mt-5 rounded-md relative overflow-x-auto shadow-md sm:rounded-lg">
+      <div className="hidden sm:block mt-5 rounded-md relative overflow-x-auto sm:rounded-lg">
         <table className="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>

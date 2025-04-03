@@ -1,6 +1,6 @@
 import React from 'react'
 import useDarkMode from '../hooks/useDarkMode'
-import { FaMoon, FaSun } from 'react-icons/fa';
+import { LuMoon, LuSun } from 'react-icons/lu';
 
 const ToggleDarkMode = () => {
   const { toggleDarkMode, isDarkMode } = useDarkMode();
@@ -14,9 +14,9 @@ const ToggleDarkMode = () => {
     // </div>
     <div
       onClick={toggleDarkMode}
-      className="text-xl transition-all duration-700 ease-in-out flex items-center rounded-full"
+      className="text-2xl transition-all duration-700 ease-in-out flex items-center rounded-full"
     >
-      <button>{isDarkMode ? <FaSun className='text-gray-200 cursor-pointer' /> : <FaMoon className='text-gray-800 cursor-pointer' />}</button>
+      <button>{isDarkMode ? <LuSun className='text-gray-200 cursor-pointer' /> : <LuMoon className='text-gray-800 cursor-pointer' />}</button>
     </div>
   )
 }
