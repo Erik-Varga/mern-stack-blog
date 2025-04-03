@@ -1,13 +1,15 @@
 import React from 'react'
 import ProgressBar from '../components/ProgressBar'
-import { TbBrandMongodb, TbBrandTailwind } from 'react-icons/tb';
-import { SiClerk, SiExpress, SiNodemon, SiPostman } from 'react-icons/si';
-import { FaGithub, FaReact } from 'react-icons/fa';
+import { TbBrandMongodb, TbBrandTailwind, TbBrandTwitter } from 'react-icons/tb';
+import { SiClerk, SiExpress, SiFacebook, SiGithub, SiLinkedin, SiNodemon, SiPostman } from 'react-icons/si';
+import { FaGithub, FaGithubAlt, FaGithubSquare, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
+import { FaXTwitter } from "react-icons/fa6";
+import { LuDrum } from "react-icons/lu";
 
 const AboutPage = () => {
   const current_hrs = 3;
-  const current_mins = 14;
+  const current_mins = 20;
 
   const total_hrs = 6;
   const total_mins = 13;
@@ -37,13 +39,29 @@ const AboutPage = () => {
     <div className='h-full m-4'>
       <h1 className='font-bold mb-5'>About</h1>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 p-2">
         <img src="ev_icon_pic.jpg" alt="" className='h-12 w-12 rounded-full shadow-md' />
-        Erik Varga | Developer
+        <div className="flex flex-col">
+          <div className='font-bold'>Erik Varga</div>
+          <div className='font-semibold text-sm text-gray-500'>Developer, Orlando, FL</div>
+        </div>
       </div>
+      <div className='mt-2 text-sm text-gray-500 dark:text-gray-200'>Hello, my name is Erik and I create stunning web applications.</div>
+
+      <div className="flex gap-2 text-gray-600 text-2xl mt-2">
+        <div className=""><SiGithub /></div>
+        <div className=""><SiLinkedin /></div>
+        <div className=""><SiFacebook /></div>
+        <div className=""><FaXTwitter /></div>
+        <div className=""><LuDrum /></div>
+        
+        
+
+        
+        </div>
 
 
-      <p className='mt-4'>Technologies used in this MERN Stack project include:</p>
+      <p className='mt-8 text-sm'>Technologies used in this MERN Stack project include:</p>
 
       <div className="hidden sm:block mt-5 rounded-md relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -84,6 +102,8 @@ const AboutPage = () => {
               <th scope="col" className="px-6 py-3">
                 Name - Description
               </th>
+              <th scope="col" className="px-6 py-3">
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -108,14 +128,14 @@ const AboutPage = () => {
         </table>
       </div>
 
-      {/* {progressData.map((item, idx) => (
+      {progressData.map((item, idx) => (
         <div className='mt-5'>
           <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} />
           <span className='text-xs'>
             {combined_current_time} | {combined_total_time}
           </span>
         </div>
-      ))} */}
+      ))}
 
     </div>
   )

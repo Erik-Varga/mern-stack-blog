@@ -14,7 +14,7 @@ const ToggleDarkMode = () => {
     // </div>
     <div
       onClick={toggleDarkMode}
-      className="text-xl transition-all duration-700 ease-in-out flex items-center p-2 rounded-full"
+      className="text-xl transition-all duration-700 ease-in-out flex items-center rounded-full"
     >
       <button>{isDarkMode ? <FaSun className='text-gray-200 cursor-pointer' /> : <FaMoon className='text-gray-800 cursor-pointer' />}</button>
     </div>

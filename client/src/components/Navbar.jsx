@@ -18,10 +18,10 @@ const Navbar = () => {
                 <span>spudevlog</span>
             </Link>
 
-            {/* mobile */}
-            <div className="md:hidden">
+            {/* hamburger menu */}
+            <div className="md:hidden z-100">
                 {/* button */}
-                <div className="cursor-pointer text-2xl flex items-center justify-center"
+                <div className="cursor-pointer text-2xl flex items-center justify-center z-100"
                     onClick={() => setOpen((prev) => !prev)}
                 >
                     {open ? <IoClose /> : <FaBars />}
@@ -51,6 +51,7 @@ const Navbar = () => {
                 <Link to="/">Trending</Link>
                 <Link to="/">Most Popular</Link>
                 <Link to="/about">About</Link>
+                <Link to="/write">Write</Link>
                 <SignedOut>
                     <Link to="/login"><button className='py-2 px-4 rounded-2xl bg-blue-400 text-white cursor-pointer'>Login</button></Link>
                 </SignedOut>
