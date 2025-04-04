@@ -2,15 +2,16 @@ import React, { useEffect } from 'react'
 import ProgressBar from '../components/ProgressBar'
 import { TbBrandMongodb, TbBrandTailwind, TbBrandTwitter } from 'react-icons/tb';
 import { SiClerk, SiExpress, SiFacebook, SiGithub, SiLinkedin, SiNodemon, SiPostman } from 'react-icons/si';
-import { FaGithub, FaGithubAlt, FaGithubSquare, FaReact } from 'react-icons/fa';
+import { FaGithub, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
 import { FaXTwitter } from "react-icons/fa6";
 import { LuDrum } from "react-icons/lu";
 import { SiAxios } from 'react-icons/si';
+import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
   const current_hrs = 3;
-  const current_mins = 20;
+  const current_mins = 38;
 
   const total_hrs = 6;
   const total_mins = 13;
@@ -42,7 +43,7 @@ const AboutPage = () => {
   }, [])
 
   return (
-    <div className='h-full mt-24'>
+    <div className='h-full mt-5'>
       <h1 className='text-2xl text-gray-800 mb-5'>About</h1>
 
       <div className="flex items-center gap-2 p-2">
@@ -54,12 +55,14 @@ const AboutPage = () => {
       </div>
       <div className='mt-5 text-sm text-gray-500 dark:text-gray-200'>Hello, my name is Erik and I create stunning web applications.</div>
 
-      <div className="flex gap-2 text-gray-600 text-2xl mt-2">
-        <div className=""><SiGithub /></div>
-        <div className=""><SiLinkedin /></div>
-        <div className=""><SiFacebook /></div>
-        <div className=""><FaXTwitter /></div>
-        <div className=""><LuDrum /></div>
+      <div className="flex gap-2 text-gray-600 dark:text-gray-400 text-2xl mt-2 cursor-pointer">
+        <div className="hover:text-gray-800"><SiGithub /></div>
+        <div className="hover:text-gray-800"><SiLinkedin /></div>
+        <div className="hover:text-gray-800"><SiFacebook /></div>
+        <div className="hover:text-gray-800"><FaXTwitter /></div>
+        <div>
+          <Link className=""><LuDrum /></Link>
+        </div>
       </div>
 
       <p className='mt-12 text-sm'>Technologies used in this MERN Stack include:</p>
@@ -87,7 +90,7 @@ const AboutPage = () => {
                     {tech.name}
                   </span>
                 </td>
-                <td className="px-6 py-4">
+                <td className="px-6 py-4 dark:text-gray-30 hover:text-black dark:hover:text-white">
                   {tech.description}
                 </td>
               </tr>

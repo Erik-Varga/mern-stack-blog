@@ -12,7 +12,10 @@ import MainLayout from './layouts/MainLayout.jsx';
 // import ErrorPage from './routes/Errorpage.jsx';
 import { ClerkProvider } from '@clerk/clerk-react'
 import AboutPage from './routes/AboutPage.jsx';
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import ContactPage from './routes/ContactPage.jsx';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const queryClient = new QueryClient();
 
@@ -54,6 +57,10 @@ const router = createBrowserRouter([
         path: "/about",
         element: <AboutPage />,
       },
+      {
+        path: "/contact",
+        element: <ContactPage />,
+      },
     ]
   }
   
@@ -64,6 +71,7 @@ createRoot(document.getElementById('root')).render(
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
+        <ToastContainer position="bottom-right" />
       </QueryClientProvider>
     </ClerkProvider>
   </StrictMode>,

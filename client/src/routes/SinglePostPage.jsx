@@ -13,7 +13,7 @@ const SinglePostPage = () => {
     }, [])
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 mt-10">
       <div className='flex gap-8'>
         <div className="md:w-full flex flex-col gap-8">
 

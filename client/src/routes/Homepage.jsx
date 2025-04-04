@@ -11,14 +11,14 @@ const Homepage = () => {
   }, [])
 
   return (
-    <div className='h-full mt-24'>
-      <h1 className='text-2xl text-gray-800 mb-5'>
+    <div className='h-full md:mt-15'>
+      <h1 className='text-2xl text-gray-800 dark:text-gray-300 mb-10'>
         {/* Breadcrumb */}
-        <div className="flex items-center gap-4">
+        {/* <div className="flex items-center gap-4">
           <Link to="/"><FaHome /></Link>
           <span>•</span>
           <span className='text-blue-800 dark:text-blue-400'>Blogs and Articles</span>
-        </div>
+        </div> */}
       </h1>
 
 

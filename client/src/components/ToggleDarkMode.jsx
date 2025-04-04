@@ -16,7 +16,7 @@ const ToggleDarkMode = () => {
       onClick={toggleDarkMode}
       className="text-2xl transition-all duration-700 ease-in-out flex items-center rounded-full"
     >
-      <button>{isDarkMode ? <LuSun className='text-gray-200 cursor-pointer' /> : <LuMoon className='text-gray-800 cursor-pointer' />}</button>
+      <button>{isDarkMode ? <LuSun className='text-gray-800 dark:text-gray-200 cursor-pointer' /> : <LuMoon className='text-gray-800 dark:text-gray-200 cursor-pointer' />}</button>
     </div>
   )
 }
