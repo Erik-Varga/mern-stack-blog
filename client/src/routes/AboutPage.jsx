@@ -1,17 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ProgressBar from '../components/ProgressBar'
 import { TbBrandMongodb, TbBrandTailwind, TbBrandTwitter } from 'react-icons/tb';
 import { SiClerk, SiExpress, SiFacebook, SiGithub, SiLinkedin, SiNodemon, SiPostman } from 'react-icons/si';
-import { FaGithub, FaReact } from 'react-icons/fa';
+import { FaChevronDown, FaGithub, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
-import { FaXTwitter } from "react-icons/fa6";
+import { FaChevronRight, FaMessage, FaXTwitter } from "react-icons/fa6";
 import { LuDrum } from "react-icons/lu";
 import { SiAxios } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
+
+  const [showTable, setShowTable] = useState(true);
+
   const current_hrs = 3;
-  const current_mins = 38;
+  const current_mins = 53;
 
   const total_hrs = 6;
   const total_mins = 13;
@@ -38,8 +41,16 @@ const AboutPage = () => {
     { name: "Github", Icon: <FaGithub />, description: "Github is used for version control and development storage." },
   ]
 
+  const handleShowTable = () => {
+    setShowTable(!showTable)
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
+    setShowTable(true);
   }, [])
 
   return (
@@ -60,14 +71,20 @@ const AboutPage = () => {
         <div className="hover:text-gray-800"><SiLinkedin /></div>
         <div className="hover:text-gray-800"><SiFacebook /></div>
         <div className="hover:text-gray-800"><FaXTwitter /></div>
-        <div>
-          <Link className=""><LuDrum /></Link>
+        <div className='ml-2'>
+          <Link to="/contact" className="flex items-center gap-1 text-xs uppercase text-gray-400 hover:text-gray-700"><FaMessage className='text-2xl' />Contact Me</Link>
         </div>
       </div>
 
-      <p className='mt-12 text-sm'>Technologies used in this MERN Stack include:</p>
+      <p className='mt-12 text-sm flex items-center'>
+        Technologies used in this MERN Stack include: &nbsp;
+        <span onClick={handleShowTable} className='cursor-pointer'>{showTable ? <FaChevronDown /> : <FaChevronRight />}</span>
+        
+        </p>
 
-      <div className="hidden sm:block mt-5 rounded-md relative overflow-x-auto sm:rounded-lg">
+
+      {showTable && (<div>
+        <div className="hidden sm:block mt-5 rounded-md relative overflow-x-auto sm:rounded-lg">
         <table className="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -131,6 +148,9 @@ const AboutPage = () => {
           </tbody>
         </table>
       </div>
+      </div>)}
+
+      
 
       <div className='mt-20'></div>
       {progressData.map((item, idx) => (

@@ -58,10 +58,9 @@ const AboutPage = () => {
         <div className=""><SiLinkedin /></div>
         <div className=""><SiFacebook /></div>
         <div className=""><FaXTwitter /></div>
-        <div className=""><LuDrum /></div>
       </div>
 
-      <p className='mt-12 text-sm'>Technologies used in this MERN Stack include:</p>
+      <p className='mt-12 text-sm'>Please complete the form:</p>
 
       <div>
         
