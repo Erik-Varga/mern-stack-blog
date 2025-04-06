@@ -1,50 +1,76 @@
 import React, { useEffect } from 'react'
 import Image from './../components/Image';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import PostMenuActions from '../components/PostMenuActions';
 import Search from '../components/Search';
 import Comments from '../components/Comments';
+import { useQuery } from '@tanstack/react-query';
+import axios from "axios";
+import { format } from 'timeago.js';
+
+const fetchPost = async (slug) => {
+  const res = await axios.get(`${import.meta.env.VITE_API_URL}/posts/${slug}`);
+  return res.data;
+};
 
 const SinglePostPage = () => {
-    useEffect(() => {
-      window.scrollTo(0, 0)
-    }, [])
+  const { slug } = useParams();
+
+  const { isPending, error, data } = useQuery({
+    queryKey: ["post", slug],
+    queryFn: () => fetchPost(slug),
+  });
+
+  if(isPending) return "loading...";
+  if(error) return "Something went wrong! " + error.message;
+  if(!data) return "Post not found!";
+
+  // useEffect(() => {
+  //   window.scrollTo(0, 0)
+  // }, [])
+
+  console.log(data)
 
   return (
     <div className="flex flex-col gap-8 mt-10">
+      {/* detail */}
       <div className='flex gap-8'>
         <div className="md:w-full flex flex-col gap-8">
 
           {/* title */}
           <h1 className='text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-semibold'>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi est, magnam.
+            {data.title}
           </h1>
 
           {/* post info */}
           <div className='flex flex-wrap items-center gap-2 text-gray-400 text-sm'>
             <span className=''>Written by</span>
-            <Link className='text-blue-800 dark:text-blue-200'>Erik Varga</Link>
+            <Link className='text-blue-800 dark:text-blue-200'>{data.user.username}</Link>
             <span className=''>|</span>
-            <Link className='text-blue-800 dark:text-blue-200'>Web Design</Link>
+            <Link className='text-blue-800 dark:text-blue-200'>{data.category}</Link>
             <span className=''>|</span>
-            <span className=''>2 days ago</span>
+            <span className=''>{format(data.createdAt)}</span>
           </div>
 
-          {/* post summary */}
-          <p className='text-gray-500 dark:text-gray-400 font-medium italic'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit itaque placeat tempora nemo velit, earum molestias mollitia enim. Eius ut reiciendis, sed eligendi dolor quidem ipsa possimus voluptate eos porro!</p>
+          {/* post summary description */}
+          <p className='text-gray-500 dark:text-gray-400 font-medium italic'>{data.description}</p>
         </div>
 
-        <div className="hidden md:block w-full">
-          <Image src="postImg.jpeg" w="600" className="rounded-2xl" />
-        </div>
+        {data.img && (
+          <div className="hidden md:block w-full">
+            <Image src={data.img} w="600" className="rounded-2xl" />
+          </div>
+        )}
       </div>
 
       {/* image */}
-      <div className="block w-full md:hidden">
-        <Image src="postImg.jpeg" w="600" className="rounded-2xl" />
-      </div>
+      {data.img && (
+        <div className="block w-full md:hidden">
+          <Image src={data.user.img} w="600" className="rounded-2xl" />
+        </div>
+      )}
 
       {/* content */}
       <div className="">
@@ -75,8 +101,11 @@ const SinglePostPage = () => {
             <div className="flex flex-col gap-4">
 
               <div className="flex items-center gap-8">
-                <Image src="userImg2.jpeg" className="w-12 h-12 rounded-full object-cover" w="48" h="48" />
-                <Link className='text-blue-800 dark:text-blue-200'>Erik Varga</Link>
+                {data.user.img && (
+                  <Image src={data.user.img} className="w-12 h-12 rounded-full object-cover" w="48" h="48" />
+
+                )}
+                <Link className='text-blue-800 dark:text-blue-200'>{data.user.username}</Link>
               </div>
               <p className='text-sm text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nam optio molestias amet assumenda modi.</p>
               <div className="flex gap-2">
@@ -85,7 +114,7 @@ const SinglePostPage = () => {
               </div>
             </div>
 
-            <PostMenuActions />
+            <PostMenuActions post={data} />
 
             <h1 className='mt-8 mb-2 text-sm font-medium'>Categories</h1>
             <div className="flex flex-col gap-2 text-sm">
@@ -102,7 +131,7 @@ const SinglePostPage = () => {
           </div>
         </div>
 
-        <Comments />
+        <Comments postId={data._id} />
       </div>
     </div>
   )

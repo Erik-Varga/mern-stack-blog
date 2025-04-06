@@ -35,6 +35,8 @@ const Navbar = () => {
 
                     {/* <li><Link to='/' duration={500} className="hover:text-blue-600">Popular</Link></li> */}
 
+                    <li><Link to='/gallery' duration={500} className="hover:text-blue-600">Gallery</Link></li>
+                    
                     <li><Link to='/about' duration={500} className="hover:text-blue-600">About</Link></li>
 
                     <li><Link to='/write' duration={500} className="hover:text-blue-600">Write</Link></li>
@@ -62,7 +64,10 @@ const Navbar = () => {
 
                 {/* <li><Link to='/' onClick={handleClick} duration={500} className="text-gray-700 dark:text-gray-300 dark:hover:text-gray-200 hover:text-blue-600">Popular</Link></li> */}
 
+                <li><Link to='/gallery' onClick={handleClick} duration={500} className="text-gray-700 dark:text-gray-300 dark:hover:text-gray-200 hover:text-blue-700">Gallery</Link></li>
+                
                 <li><Link to='/about' onClick={handleClick} duration={500} className="text-gray-700 dark:text-gray-300 dark:hover:text-gray-200 hover:text-blue-700">About</Link></li>
+                
 
                 <li><Link to='/write' onClick={handleClick} duration={500} className="text-gray-700 dark:text-gray-300 dark:hover:text-gray-200 hover:text-blue-700">Write</Link></li>
                 

@@ -13,7 +13,7 @@ const AboutPage = () => {
   const [showTable, setShowTable] = useState(true);
 
   const current_hrs = 4;
-  const current_mins = 19;
+  const current_mins = 51;
 
   const total_hrs = 6;
   const total_mins = 13;
@@ -151,26 +151,28 @@ const AboutPage = () => {
 
       <div className='mt-5 bg-gray-50 dark:bg-gray-900 p-2'>
         <h1>Links:</h1>
-        <div className='text-sm uppercase flex items-center gap-2'>
+        <div className='text-sm uppercase flex flex-wrap items-center gap-2'>
          • <a href="https://account.mongodb.com/account/login">MongoDB Login </a>
-         • <a href="https://imagekit.io/">ImageKit IO </a>
-         • <a href="https://imagekit.io/docs">ImageKit docs </a>
-         • <a href="https://ngrok.com/docs/agent/">Ngrok docs </a>
-         • <a href="https://clerk.com/docs">Clerk docs </a>
-         • <a href="https://tanstack.com/query/v4/docs/framework/react/overview">React Query docs </a>
+         • <a href="https://imagekit.io/">ImageKit IO</a>
+         • <a href="https://tailwindcss.com/">Tailwind CSS</a>
+         | DOCS
+         • <a href="https://imagekit.io/docs">ImageKit</a>
+         • <a href="https://ngrok.com/docs/agent/">Ngrok</a>
+         • <a href="https://clerk.com/docs">Clerk</a>
+         • <a href="https://tanstack.com/query/v4/docs/framework/react/overview">React Query </a>
 
         </div>
       </div>
 
       <div className='mt-20'></div>
-      {/* {progressData.map((item, idx) => (
+      {progressData.map((item, idx) => (
         <div className='mt-5'>
           <ProgressBar key={item.id} bgcolor={item.bgcolor} completed={item.completed} />
           <span className='text-xs'>
             {combined_current_time} | {combined_total_time}
           </span>
         </div>
-      ))} */}
+      ))}
 
 
     </div>

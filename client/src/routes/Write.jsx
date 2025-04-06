@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useAuth, useUser } from "@clerk/clerk-react";
 import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.snow.css';
@@ -33,8 +33,6 @@ const authenticator = async () => {
 
 
 const Write = () => {
-  // const ref = useRef(null);
-
   const { isLoaded, isSignedIn } = useUser();
   const [value, setValue] = useState("");
   const [cover, setCover] = useState("");
