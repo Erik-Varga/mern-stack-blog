@@ -12,8 +12,8 @@ const AboutPage = () => {
 
   const [showTable, setShowTable] = useState(true);
 
-  const current_hrs = 3;
-  const current_mins = 53;
+  const current_hrs = 4;
+  const current_mins = 19;
 
   const total_hrs = 6;
   const total_mins = 13;
@@ -28,16 +28,16 @@ const AboutPage = () => {
   ]
 
   const techData = [
-    { id: 1, name: "MongoDB", Icon: <TbBrandMongodb />, description: "MongoDB is the cross-platform document-oriented NoSQL database program used to store the data." },
-    { id: 2, name: "Express", Icon: <SiExpress />, description: "Express is the web application framework for Node JS used for building the API." },
-    { id: 3, name: "React JS", Icon: <FaReact />, description: "React is the frontend framework used to build the user interface and web application pages." },
-    { id: 4, name: "Node JS", Icon: <SiNodemon />, description: "Node is the server side runtime environment that provides the connection to the requests and responses." },
-    { id: 5, name: "Javascript", Icon: <IoLogoJavascript />, description: "JavaScript is the web application programming language." },
-    { id: 6, name: "Tailwind CSS", Icon: <TbBrandTailwind />, description: "Tailwind CSS is the tool used to style the web application pages." },
-    { id: 7, name: "Clerk", Icon: <SiClerk />, description: "Clerk is the authorization provider used for session management." },
-    { id: 8, name: "Axios", Icon: <SiAxios />, description: "Axios is the JS library used to make HTTP requests from web browsers and Node JS." },
-    { id: 9, name: "Postman", Icon: <SiPostman />, description: "Postman is the utility used to test the API routes." },
-    { id: 10, name: "Github", Icon: <FaGithub />, description: "Github is used for version control and development storage." },
+    { id: 1, name: "MongoDB", Icon: <TbBrandMongodb />, description: "MongoDB is the cross-platform document-oriented NoSQL database program used to store the data.", link: "https://account.mongodb.com/account/login"},
+    { id: 2, name: "Express", Icon: <SiExpress />, description: "Express is the web application framework for Node JS used for building the API.", link: ""},
+    { id: 3, name: "React JS", Icon: <FaReact />, description: "React is the frontend framework used to build the user interface and web application pages.", link: ""},
+    { id: 4, name: "Node JS", Icon: <SiNodemon />, description: "Node is the server side runtime environment that provides the connection to the requests and responses.", link: ""},
+    { id: 5, name: "Javascript", Icon: <IoLogoJavascript />, description: "JavaScript is the web application programming language.", link: ""},
+    { id: 6, name: "Tailwind CSS", Icon: <TbBrandTailwind />, description: "Tailwind CSS is the tool used to style the web application pages.", link: ""},
+    { id: 7, name: "Clerk", Icon: <SiClerk />, description: "Clerk is the authorization provider used for session management.", link: ""},
+    { id: 8, name: "Axios", Icon: <SiAxios />, description: "Axios is the JS library used to make HTTP requests from web browsers and Node JS.", link: "" },
+    { id: 9, name: "Postman", Icon: <SiPostman />, description: "Postman is the utility used to test the API routes.", link: ""},
+    { id: 10, name: "Github", Icon: <FaGithub />, description: "Github is used for version control and development storage.", link: ""},
   ]
 
   const handleShowTable = () => {
@@ -149,7 +149,18 @@ const AboutPage = () => {
       </div>
       </div>)}
 
-      
+      <div className='mt-5 bg-gray-50 dark:bg-gray-900 p-2'>
+        <h1>Links:</h1>
+        <div className='text-sm uppercase flex items-center gap-2'>
+         • <a href="https://account.mongodb.com/account/login">MongoDB Login </a>
+         • <a href="https://imagekit.io/">ImageKit IO </a>
+         • <a href="https://imagekit.io/docs">ImageKit docs </a>
+         • <a href="https://ngrok.com/docs/agent/">Ngrok docs </a>
+         • <a href="https://clerk.com/docs">Clerk docs </a>
+         • <a href="https://tanstack.com/query/v4/docs/framework/react/overview">React Query docs </a>
+
+        </div>
+      </div>
 
       <div className='mt-20'></div>
       {/* {progressData.map((item, idx) => (
