@@ -5,7 +5,6 @@ import { SiClerk, SiExpress, SiFacebook, SiGithub, SiLinkedin, SiNodemon, SiPost
 import { FaChevronDown, FaGithub, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
 import { FaChevronRight, FaMessage, FaXTwitter } from "react-icons/fa6";
-import { LuDrum } from "react-icons/lu";
 import { SiAxios } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 
@@ -25,20 +24,20 @@ const AboutPage = () => {
   const final_pct_var = Math.round((combined_current_time / combined_total_time) * 100).toFixed(0);
 
   const progressData = [
-    { bgcolor: "#1aa7ec", completed: final_pct_var },
+    { id: 1, bgcolor: "#1aa7ec", completed: final_pct_var },
   ]
 
   const techData = [
-    { name: "MongoDB", Icon: <TbBrandMongodb />, description: "MongoDB is a cross-platform document-oriented NoSQL database program used to store the data." },
-    { name: "Express", Icon: <SiExpress />, description: "Express is a web application framework for Node JS used for building the API." },
-    { name: "React JS", Icon: <FaReact />, description: "React is the frontend framework used to build the user interface and web application pages." },
-    { name: "Node JS", Icon: <SiNodemon />, description: "Node is the server side runtime environment that provides the connection to the requests and responses." },
-    { name: "Javascript", Icon: <IoLogoJavascript />, description: "JavaScript is the web application programming language." },
-    { name: "Tailwind CSS", Icon: <TbBrandTailwind />, description: "Tailwind CSS is the tool used to style the web application pages." },
-    { name: "Clerk", Icon: <SiClerk />, description: "Clerk is the authorization provider used for session management." },
-    { name: "Axios", Icon: <SiAxios />, description: "Axios is a JS library used to make HTTP requests from web browsers and Node JS." },
-    { name: "Postman", Icon: <SiPostman />, description: "Postman is a utility used to test the API routes." },
-    { name: "Github", Icon: <FaGithub />, description: "Github is used for version control and development storage." },
+    { id: 1, name: "MongoDB", Icon: <TbBrandMongodb />, description: "MongoDB is the cross-platform document-oriented NoSQL database program used to store the data." },
+    { id: 2, name: "Express", Icon: <SiExpress />, description: "Express is the web application framework for Node JS used for building the API." },
+    { id: 3, name: "React JS", Icon: <FaReact />, description: "React is the frontend framework used to build the user interface and web application pages." },
+    { id: 4, name: "Node JS", Icon: <SiNodemon />, description: "Node is the server side runtime environment that provides the connection to the requests and responses." },
+    { id: 5, name: "Javascript", Icon: <IoLogoJavascript />, description: "JavaScript is the web application programming language." },
+    { id: 6, name: "Tailwind CSS", Icon: <TbBrandTailwind />, description: "Tailwind CSS is the tool used to style the web application pages." },
+    { id: 7, name: "Clerk", Icon: <SiClerk />, description: "Clerk is the authorization provider used for session management." },
+    { id: 8, name: "Axios", Icon: <SiAxios />, description: "Axios is the JS library used to make HTTP requests from web browsers and Node JS." },
+    { id: 9, name: "Postman", Icon: <SiPostman />, description: "Postman is the utility used to test the API routes." },
+    { id: 10, name: "Github", Icon: <FaGithub />, description: "Github is used for version control and development storage." },
   ]
 
   const handleShowTable = () => {
@@ -72,7 +71,7 @@ const AboutPage = () => {
         <div className="hover:text-gray-800"><SiFacebook /></div>
         <div className="hover:text-gray-800"><FaXTwitter /></div>
         <div className='ml-2'>
-          <Link to="/contact" className="flex items-center gap-1 text-xs uppercase text-gray-400 hover:text-gray-700"><FaMessage className='text-2xl' />Contact Me</Link>
+          <Link to="/contact" className="flex items-center gap-1 text-xs uppercase text-gray-400 hover:text-gray-700"><FaMessage className='text-2xl' title='Contact Me' /></Link>
         </div>
       </div>
 
@@ -98,7 +97,7 @@ const AboutPage = () => {
           </thead>
           <tbody>
           {techData.map((tech, idx) => (
-              <tr key={idx} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <tr key={tech.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                   <span className="flex items-center gap-2">
                     <span className="text-2xl">
@@ -129,7 +128,7 @@ const AboutPage = () => {
           </thead>
           <tbody>
           {techData.map((tech, idx) => (
-              <tr key={idx} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <tr key={tech.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white">
                   <span className="flex flex-wrap items-center gap-2">
                     <span className="text-2xl">
@@ -153,14 +152,14 @@ const AboutPage = () => {
       
 
       <div className='mt-20'></div>
-      {progressData.map((item, idx) => (
+      {/* {progressData.map((item, idx) => (
         <div className='mt-5'>
-          <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} />
+          <ProgressBar key={item.id} bgcolor={item.bgcolor} completed={item.completed} />
           <span className='text-xs'>
             {combined_current_time} | {combined_total_time}
           </span>
         </div>
-      ))}
+      ))} */}
 
 
     </div>

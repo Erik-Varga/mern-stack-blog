@@ -65,7 +65,7 @@ const Navbar = () => {
                 <li><Link to='/about' onClick={handleClick} duration={500} className="text-gray-700 dark:text-gray-300 dark:hover:text-gray-200 hover:text-blue-700">About</Link></li>
 
                 <li><Link to='/write' onClick={handleClick} duration={500} className="text-gray-700 dark:text-gray-300 dark:hover:text-gray-200 hover:text-blue-700">Write</Link></li>
-
+                
                 <SignedOut>
                     <Link to="/login" onClick={handleClick}><button className='py-2 px-4 rounded-2xl bg-blue-400 hover:bg-blue-500 text-white text-xl cursor-pointer'><LuLogIn title='Login' /></button></Link>
                 </SignedOut>

@@ -3,7 +3,7 @@ import Post from "../models/post.model.js";
 import User from "../models/user.model.js";
 
 // get all posts
-export const getPosts = async (req,res) => {
+export const getPosts = async (req, res) => {
     const posts = await Post.find()
     res.status(200).json(posts)
 };
@@ -15,7 +15,7 @@ export const getPost = async (req,res) => {
 };
 
 // create post
-export const createPost = async (req,res) => {
+export const createPost = async (req, res) => {
     const clerkUserId = req.auth.userId;
 
     if (!clerkUserId) {

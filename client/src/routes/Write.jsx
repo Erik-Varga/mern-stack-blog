@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useAuth, useUser } from "@clerk/clerk-react";
 import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.snow.css';
@@ -7,16 +7,20 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaRegImage, FaVideo } from "react-icons/fa6";
-import { IKContext, IKUpload } from "imagekitio-react";
-import { FaFile } from 'react-icons/fa';
+import { IKContext, IKImage, IKUpload } from 'imagekitio-react';
+import Upload from "../components/Upload"
 
 const authenticator = async () => {
   try {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/posts/upload-auth`);
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/posts/upload-auth`
+    );
 
     if (!response.ok) {
       const errorText = await response.text();
-      throw new Error(`Request failed with status ${response.status}: ${errorText}`);
+      throw new Error(
+        `Request failed with status ${response.status}: ${errorText}`
+      );
     }
 
     const data = await response.json();
@@ -27,13 +31,31 @@ const authenticator = async () => {
   }
 };
 
-const Write = () => {
-  const { isLoaded, isSignedIn } = useUser();
-  const { getToken } = useAuth();
 
-  const [value, setValue] = useState('');
+const Write = () => {
+  // const ref = useRef(null);
+
+  const { isLoaded, isSignedIn } = useUser();
+  const [value, setValue] = useState("");
+  const [cover, setCover] = useState("");
+  const [img, setImg] = useState("");
+  const [video, setVideo] = useState("");
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    img && setValue((prev) => prev + `<p><image src="${img.url}"/></p>`);
+  }, [img]);
+
+  useEffect(() => {
+    video &&
+      setValue(
+        (prev) => prev + `<p><iframe class="ql-video" src="${video.url}"/></p>`
+      );
+  }, [video]);
 
   const navigate = useNavigate();
+
+  const { getToken } = useAuth();
 
   const mutation = useMutation({
     mutationFn: async (newPost) => {
@@ -45,17 +67,17 @@ const Write = () => {
       });
     },
     onSuccess: (res) => {
-      toast.success('Post has been created')
-      navigate(`../${res.data.slug}`);
+      toast.success("Post has been created");
+      navigate(`/${res.data.slug}`);
     },
   });
 
   if (!isLoaded) {
-    return <div className=''>Loading...</div>
+    return <div className="">Loading...</div>;
   }
 
-  if (!isLoaded && isSignedIn) {
-    return <div className=''>You should login!</div>
+  if (isLoaded && !isSignedIn) {
+    return <div className="">You should login!</div>;
   }
 
   const handleSubmit = (e) => {
@@ -63,14 +85,31 @@ const Write = () => {
     const formData = new FormData(e.target);
 
     const data = {
+      img: cover.filePath || "",
       title: formData.get("title"),
       category: formData.get("category"),
       description: formData.get("description"),
       content: value,
     };
 
-    console.log(data)
-    mutation.mutate(data)
+    console.log(data);
+
+    mutation.mutate(data);
+  };
+
+  const onError = (err) => {
+    console.log(err)
+    toast.error("Image upload failed!")
+  };
+
+  const onSuccess = (res) => {
+    console.log(res)
+    setCover(res)
+  };
+
+  const onUploadProgress = (progress) => {
+    console.log(progress)
+    setProgress(Math.round((progress.loaded / progress.total) * 100));
   }
 
   return (
@@ -81,25 +120,26 @@ const Write = () => {
       <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1 mb-6">
 
         {/* image */}
-        {/* <button className="w-max p-2 shadow-md rounded-xl text-sm text-gray-500 cursor-pointer hover:bg-gray-200 hover:text-gray-800 dark:hover:bg-gray-700 dark:hover:text-gray-100">Add a cover image</button> */}
+        {/* <Upload type="image" setProgress={setProgress} setData={setCover}>
+          <button className="w-max p-2 shadow-md rounded-xl text-sm text-gray-500 cursor-pointer hover:bg-gray-200 hover:text-gray-800 dark:hover:bg-gray-700 dark:hover:text-gray-100">Add a cover image</button>
+        </Upload> */}
 
-        <IKContext 
-          publicKey={import.meta.env.VITE_IMAGEKIT_PUBLIC_KEY} 
-          urlEndpoint={import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT} 
-          authenticator={authenticator} >
-          
-          {/* ...child components */}
-          <div className="flex items-center gap-2 cursor-pointer">
-            <FaFile className='text-xl' />
-            
-            <IKUpload
-              fileName="test-upload.png"
-              className='border border-gray-400 rounded-md text-sm p-2 hover:bg-blue-100 cursor-pointer'
-              // onError={onError}
-              // onSuccess={onSuccess}
-            />
-          </div>
+        <IKContext
+          publicKey={import.meta.env.VITE_IK_PUBLIC_KEY}
+          urlEndpoint={import.meta.env.VITE_IK_URL_ENDPOINT}
+          authenticator={authenticator}
+        >
+          <IKUpload
+            useUniqueFileName
+            onError={onError}
+            onSuccess={onSuccess}
+            onUploadProgress={onUploadProgress}
+          // className='hidden'
+          >
+
+          </IKUpload>
         </IKContext>
+        {/* {cover} */}
 
         {/* title */}
         <input type="text" name='title' placeholder='Enter a Title' className='text-3xl font-semibold bg-transparent outline-none' />
@@ -121,29 +161,40 @@ const Write = () => {
         <textarea name="description" id="" placeholder='A Short Description' className='p-4 rounded-xl bg-white shadow-md' />
 
         {/* details */}
-        <div className="flex">
+        <div className="flex flex-1">
           <div className="flex flex-col gap-2 mr-3">
-            <div className="cursor-pointer text-2xl hover:text-blue-400"><FaRegImage /></div>
-            <div className="cursor-pointer text-2xl hover:text-blue-400"><FaVideo /></div>
+            <Upload type="image" setProgress={setProgress} setData={setImg}>
+              <FaRegImage />
+            </Upload>
+
+            <Upload type="video" setProgress={setProgress} setData={setVideo}>
+              <FaVideo />
+            </Upload>
           </div>
+
           <ReactQuill
             theme='snow'
             className='flex-1 rounded-xl bg-white shadow-md'
             value={value}
             onChange={setValue}
+            readOnly={0 < progress && progress < 100}
           />
         </div>
 
         {/* submit */}
         <button
-          disabled={mutation.isPending}
+          disabled={mutation.isPending || (0 < progress && progress < 100)}
           className='bg-blue-400 hover:bg-blue-500 text-white font-medium rounded-xl mt-4 p-2 w-36 cursor-pointer disabled:bg-blue-300 disabled:cursor-not-allowed'
         >
           {mutation.isPending ? "Loading..." : "Send"}
         </button>
-        {mutation.isError && <span>{mutation.error.message}</span>}
+        <span className="flex font2 text-sm">
+          {"Progress:" + progress}
+          {mutation.isError && <span>{mutation.error.message}</span>}
+        </span>
       </form>
     </div>
+
   )
 }
 
