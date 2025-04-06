@@ -165,14 +165,14 @@ const AboutPage = () => {
       </div>
 
       <div className='mt-20'></div>
-      {progressData.map((item, idx) => (
+      {/* {progressData.map((item, idx) => (
         <div className='mt-5'>
           <ProgressBar key={item.id} bgcolor={item.bgcolor} completed={item.completed} />
           <span className='text-xs'>
             {combined_current_time} | {combined_total_time}
           </span>
         </div>
-      ))}
+      ))} */}
 
 
     </div>
