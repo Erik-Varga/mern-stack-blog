@@ -2,7 +2,8 @@ import { useAuth, useUser } from '@clerk/clerk-react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import React from 'react'
-import { FaRegTrashAlt, FaTrash, FaTrashAlt } from 'react-icons/fa';
+import { GoStar, GoStarFill } from "react-icons/go";
+import { FaRegTrashAlt, FaStar, FaStarHalfAlt, FaTrash, FaTrashAlt } from 'react-icons/fa';
 import { FaTrashCan } from 'react-icons/fa6';
 import { RiFileMarkedFill, RiFileMarkedLine } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
@@ -70,15 +71,41 @@ const PostMenuActions = ({ post }) => {
     },
   });
 
-  const handleDelete = () => {
-    deleteMutation.mutate();
-  };
+  const featureMutation = useMutation({
+    mutationFn: async () => {
+      const token = await getToken();
+      return axios.patch(`${import.meta.env.VITE_API_URL}/posts/feature`, 
+        {
+
+          postId: post._id,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+    },
+    onSuccess: ()=> {
+      queryClient.invalidateQueries({ queryKey: ["post", post.slug] });
+    },
+    onError: (error) => {
+      toast.error(error.response.data);
+    },
+  });
 
   const handleSave = () => {
     if (!user) {
       return navigate("/login")
     }
     saveMutation.mutate();
+  };
+
+  const handleFeature = () => {
+    featureMutation.mutate();
+  };
+
+  const handleDelete = () => {
+    deleteMutation.mutate();
   };
 
   return (
@@ -99,6 +126,22 @@ const PostMenuActions = ({ post }) => {
       </div>
       }
 
+      {isAdmin && (
+        <div className="flex items-center gap-2 py-2 text-sm cursor-pointer" onClick={handleFeature}>
+        
+        {featureMutation.isPending 
+          ? post.isFeatured 
+            ? <GoStarFill className="text-2xl" /> 
+            : <GoStar className="text-2xl" /> 
+          : post.isFeatured
+          ? <GoStar className="text-2xl" />
+          : <GoStarFill className="text-2xl" />
+          }
+
+        <span>Feature this post</span>
+        {featureMutation.isPending && <span className='text-xs font2'>(in progress)</span>}
+      </div>
+      )}
       {user && (post.user.username === user.username || isAdmin ) && (
         <div className="flex items-center gap-2 py-2 text-sm cursor-pointer" onClick={handleDelete}>
           <FaTrashAlt className="text-2xl" />
