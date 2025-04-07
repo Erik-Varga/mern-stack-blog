@@ -12,18 +12,28 @@ const fetchPosts = async (pageParam) => {
 };
 
 const PostList = () => {
-  const { data, error, fetchNextPage, hasNextPage, isFetching, isFetchingNextPage, status } = useInfiniteQuery({
-    queryKey: ['posts'],
+
+
+  const { 
+    data, 
+    error, 
+    fetchNextPage, 
+    hasNextPage, 
+    isFetching, 
+    isFetchingNextPage, 
+    status, 
+  } = useInfiniteQuery({
+    queryKey: ["posts"],
     queryFn: ({ pageParam = 1 }) => fetchPosts(pageParam),
     initialPageParam: 1,
     getNextPageParam: (lastpage, pages) => lastpage.hasMore ? pages.length + 1 : undefined,
   });
 
-  console.log(data);
+  // console.log(data);
 
-  if (status === "loading") return <div className='font2 animate-pulse p-2'>Loading...</div>
+  if (isFetching) return <div className='font2 animate-pulse p-2'>Loading...</div>
 
-  if (status === "error") {
+  if (error) {
     return (
       <div className='font2 text-red-600 bg-red-100 flex items-center gap-2'>
         <div>Something went wrong. An error has occurred: {error.message}</div>

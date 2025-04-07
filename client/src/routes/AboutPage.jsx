@@ -12,14 +12,15 @@ const AboutPage = () => {
 
   const [showTable, setShowTable] = useState(true);
 
-  const current_hrs = 4;
-  const current_mins = 51;
+  const current_hrs = 5;
+  const current_mins = 8;
 
   const total_hrs = 6;
   const total_mins = 13;
 
   const combined_current_time = current_hrs * 60 + current_mins;
   const combined_total_time = total_hrs * 60 + total_mins;
+  const time_left = (combined_total_time - combined_current_time);
 
   const final_pct_var = Math.round((combined_current_time / combined_total_time) * 100).toFixed(0);
 
@@ -159,20 +160,21 @@ const AboutPage = () => {
          • <a href="https://imagekit.io/docs">ImageKit</a>
          • <a href="https://ngrok.com/docs/agent/">Ngrok</a>
          • <a href="https://clerk.com/docs">Clerk</a>
+         • <a href="https://axios-http.com/docs/intro">Axios</a>
          • <a href="https://tanstack.com/query/v4/docs/framework/react/overview">React Query </a>
 
         </div>
       </div>
 
       <div className='mt-20'></div>
-      {/* {progressData.map((item, idx) => (
+      {progressData.map((item, idx) => (
         <div className='mt-5'>
-          <ProgressBar key={item.id} bgcolor={item.bgcolor} completed={item.completed} />
-          <span className='text-xs'>
-            {combined_current_time} | {combined_total_time}
+          {/* <ProgressBar key={item.id} bgcolor={item.bgcolor} completed={item.completed} /> */}
+          <span className='text-xs font2'>
+            {combined_current_time} | {combined_total_time} | {time_left} | {final_pct_var}%
           </span>
         </div>
-      ))} */}
+      ))}
 
 
     </div>
